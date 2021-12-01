@@ -58,6 +58,9 @@ jobs:
           - name: x86_64-gnu-llvm-14
             os: ubuntu-20.04-16core-64gb
             env: {}
+          - name: bpfel-unknown-unknown
+            os: ubuntu-latest
+            env: {}
           - name: x86_64-gnu-tools
             os: ubuntu-20.04-16core-64gb
             env: {}

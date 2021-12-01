@@ -14,7 +14,6 @@
 # step CI will fail.
 
 ---
-
 ###############################
 #   YAML Anchors Definition   #
 ###############################
@@ -30,7 +29,6 @@
 # The expand-yaml-anchors tool will automatically remove this block from the
 # output YAML file.
 x--expand-yaml-anchors--remove:
-
   - &shared-ci-variables
     CI_JOB_NAME: ${{ matrix.name }}
     CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
@@ -143,9 +141,9 @@ x--expand-yaml-anchors--remove:
         run: src/ci/scripts/should-skip-this.sh
         <<: *step
 
-#      - name: ensure the channel matches the target branch
-#        run: src/ci/scripts/verify-channel.sh
-#        <<: *step
+      #      - name: ensure the channel matches the target branch
+      #        run: src/ci/scripts/verify-channel.sh
+      #        <<: *step
 
       - name: collect CPU statistics
         run: src/ci/scripts/collect-cpu-stats.sh
@@ -325,6 +323,9 @@ jobs:
 
           - name: x86_64-gnu-llvm-14
             <<: *job-linux-16c
+
+          - name: bpfel-unknown-unknown
+            <<: *job-linux-xl
 
           - name: x86_64-gnu-tools
             <<: *job-linux-16c
