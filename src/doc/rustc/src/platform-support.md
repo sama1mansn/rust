@@ -309,6 +309,7 @@ target | std | host | notes
 [`riscv64gc-unknown-netbsd`](platform-support/netbsd.md) | ✓ | ? | RISC-V NetBSD
 [`riscv64gc-unknown-openbsd`](platform-support/openbsd.md) | ✓ | ✓ | OpenBSD/riscv64
 `s390x-unknown-linux-musl` |  |  | S390x Linux (kernel 3.2, MUSL)
+`sbf-solana-solana` | ✓ |  | SBF
 `sparc-unknown-linux-gnu` | ✓ |  | 32-bit SPARC Linux
 [`sparc64-unknown-netbsd`](platform-support/netbsd.md) | ✓ | ✓ | NetBSD/sparc64
 [`sparc64-unknown-openbsd`](platform-support/openbsd.md) | ✓ | ✓ | OpenBSD/sparc64
