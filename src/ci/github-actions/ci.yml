@@ -328,7 +328,7 @@ jobs:
           - name: x86_64-gnu-llvm-14
             <<: *job-linux-16c
 
-          - name: bpfel-unknown-unknown
+          - name: sbf-solana-solana
             <<: *job-linux-xl
 
           - name: x86_64-gnu-tools
@@ -349,7 +349,7 @@ jobs:
           - name: x86_64-gnu-llvm-10
             <<: *job-linux-xl
 
-          - name: bpfel-unknown-unknown
+          - name: sbf-solana-solana
             <<: *job-linux-xl
 
   auto:
