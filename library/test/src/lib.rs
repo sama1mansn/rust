@@ -59,7 +59,6 @@ use std::{
     collections::VecDeque,
     env, io,
     io::prelude::Write,
-    mem::ManuallyDrop,
     panic::{self, catch_unwind, AssertUnwindSafe, PanicInfo},
     process::{self, Command, Termination},
     sync::mpsc::{channel, Sender},
@@ -67,6 +66,8 @@ use std::{
     thread,
     time::{Duration, Instant},
 };
+#[cfg(not(target_family = "solana"))]
+use std::mem::ManuallyDrop;
 
 pub mod bench;
 mod cli;
@@ -119,6 +120,7 @@ pub fn test_main(args: &[String], tests: Vec<TestDescAndFn>, options: Option<Opt
             process::exit(ERROR_EXIT_CODE);
         }
     } else {
+        #[cfg(not(target_family = "solana"))]
         if !opts.nocapture {
             // If we encounter a non-unwinding panic, flush any captured output from the current test,
             // and stop capturing output to ensure that the non-unwinding panic message is visible.
