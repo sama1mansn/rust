@@ -332,7 +332,7 @@ jobs:
             <<: *job-linux-16c
 
           - name: sbf-solana-solana
-            <<: *job-linux-xl
+            <<: *job-linux-16c
             tidy: false
 
           - name: x86_64-gnu-tools
@@ -348,13 +348,13 @@ jobs:
       matrix:
         include:
           - name: mingw-check
-            <<: *job-linux-xl
+            <<: *job-linux-16c
 
           - name: x86_64-gnu-llvm-12
-            <<: *job-linux-xl
+            <<: *job-linux-16c
 
           - name: sbf-solana-solana
-            <<: *job-linux-xl
+            <<: *job-linux-16c
 
   auto:
     <<: *base-ci-job
